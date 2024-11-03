@@ -8,12 +8,18 @@ import User from '@/components/ui/components/conversation/User';
 import { Input } from '@/components/ui/input';
 import { Button } from '@/components/ui/button';
 import { useScrollToBottom } from '@/components/use-scroll-to-bottom';
+import { useSession } from 'next-auth/react';
+import { useEffect } from 'react';
+import { saveToken } from '@/lib/users';
 
 export default function Page() {
   const { messages, input, handleInputChange, handleSubmit } = useChat({
     keepLastMessageOnError: true,
   });
-
+  const { data: session } = useSession()
+  useEffect(() => {
+    saveToken(session?.accessToken);
+  }, [])
   const [messageContainerRef, endMessageRef] = useScrollToBottom<HTMLDivElement>()
   return (
     <div className='flex flex-col gap-5 items-center h-[780px] overflow-hidden md:px-96'>
