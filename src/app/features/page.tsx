@@ -51,9 +51,9 @@ function Features() {
       <main className="flex-grow flex items-center justify-center z-20">
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 p-4">
           <FeatureButton onClick={() => router.push("/chat")} label="Chat Support" icon={<FaComments />} />
-          <FeatureButton onClick={() => router.push("/Mindfulness")} label="Mindfulness" icon={<FaSpa />} />
+          <FeatureButton onClick={() => router.push("/mindfulness")} label="Mindfulness" icon={<FaSpa />} />
           <FeatureButton onClick={() => router.push("/songs")} label="Songs" icon={<FaHeart />} />
-          <FeatureButton onClick={() => router.push("./community")} label="Community" icon={<FaHandsHelping />} />
+          <FeatureButton onClick={() => router.push("/community")} label="Community" icon={<FaHandsHelping />} />
         </div>
       </main>
 
